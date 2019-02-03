@@ -61,6 +61,38 @@ This terminates the process, but bare in mind what just happened was we run an a
 
 ## REFINEMENTS
 
+### Adding HTML 
+
 Lets make it look nicer by changing the message `"Greetings bloggers"` to `"<h1>Greetings bloggers<\h1>"` this is html header tags, if you don't know what this is, it is the markup code which formats how text and images are displayed in a web browser. It is standard must know knowledge for any web developer or coder in general and rather easy to learn in short time.
 
-Make sure you stop your webserver with `ctl + c` on the command line  / terminal and start it again with `flask run`
+Make sure you stop your webserver with `ctl + c` on the command line  / terminal and start it again with `flask run`.
+
+### Running as Debug (no need to restart)
+Now lets make our flask application update without having to stop and start by setting our flask server in Debug mode, on commandline/terminal run : 
+
+```
+export FLASK_DEBUG=1
+````
+
+When you execute `flask run` you notice you get extra info in the terminal window indicating it is indeed in debug mode. 
+This means you can change code and it will udpate on the fly.
+
+### Running directly as python program
+
+Instead of having to execute `flask run` with all the Environment variables we needed to set up. We can just change the code to the following: 
+
+```
+from flask import Flask
+app = Flask(__name__)
+
+
+@app.route("/")
+def hello():
+	return "<h1>Greetings bloggers</h1>"
+
+
+if __name__ == '__main__':
+	app.run(debug=True)
+```
+
+The last piece of code simply says if the name is the main program, then execute the flask run service with dubug switched on. This wont work if the code is imported to another program as it wont be the main.
