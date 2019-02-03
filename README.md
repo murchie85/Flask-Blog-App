@@ -87,7 +87,8 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def hello():
+@app.route("/home")
+def home():
 	return "<h1>Greetings bloggers</h1>"
 
 
@@ -96,3 +97,25 @@ if __name__ == '__main__':
 ```
 
 The last piece of code simply says if the name is the main program, then execute the flask run service with dubug switched on. This wont work if the code is imported to another program as it wont be the main.
+
+
+## Adding another web page
+
+Lets add another web page simply by copying  three lines of code and making some changes, add in this section below your hello function but above the if statement:
+
+```
+@app.route("/about")
+def about():
+	return "<h1>About Page</h1>"
+```
+
+So things we needed to change was the page structure inside route, the name of the function `def about():` and optionally what we decide to return. In this instance I just returned `About page`. 
+
+## CONCLUSION
+
+The reason I decided to write this blog was that I could code well in python and knew how to design static websites and even dynamc ones with php - but I couldn't understand how python could be used as a web server. 
+
+From these few steps hopefully you can see the potential of Flask, you can build on this and make the website more interesting but ultimatley see how python could be used to serve your web pages to customers and the real world. 
+
+ This learning material I picked up by following Corey Schafer's `Python Flask Tutorial` on youtube - there are multiple parts and it is well worth following through. Link can be found [here](https://www.youtube.com/watch?v=MwZwr5Tvyxo&t=907s) 
+
