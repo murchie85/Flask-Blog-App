@@ -3,20 +3,21 @@
 ![FLASK IMAGE](https://cdn-images-1.medium.com/max/438/1*0G5zu7CnXdMT9pGbYUTQLQ.png)
 
 ## DEPENDENCIES
-Using Anaconda with virtual env
-
-- Python 3
-- Flask
+In this tutorial I am using Anconda (which is one of python distributions) and virtual enviroment with installed Flask (framework for creating websites using Python). This tutorial wants you to have completed Anaconda installation with Pip and added theese to path. For more info please visit another tutorials.
 
 ## Running a simple web page 
 
 Getting started with a simple flask application: 
 
 1. Create a directory FLASK_BLOG
-2. `cd FLASK_BLOG`
-3. Set up a virtual environment (download anaconda) then create your environment to work in 
-4. `pip install flask`
-5. Create a file called `flaskblog.py`
+2. Open terminal (or cmd on Windows) and type `cd FLASK_BLOG` - This will change current directory.
+3. Now install virtual environmment using `pip install virtualenv`
+4. Activate virtual environmment using this command `virtualenv venv` this will create new virtual in this directory.
+4. Now type `source venv/bin/activate` to activate this virtual environmment.
+5. Know you shoud see (.venv) in front of your new line in terminal. Install flask (`pip install flask`).
+6. Create a file called `flaskblog.py`
+
+If you want to escape from virtual type "deactivate".
 
 Now lets start adding code to `flaskblog.py` , you can go to the flask main website which gives you your first hello world code to work with [here](http://flask.pocoo.org/) or just copy and paste the code below: 
 
